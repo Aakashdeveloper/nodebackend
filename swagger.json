@@ -11,57 +11,67 @@
         }
     ],
     "paths":{
-        "/":{
-            "summary":"Testing Default Route",
+        "/health":{
+            "summary":"Testing Health Check",
             "get":{
-                "description":"Testing Default Route",
+                "description":"Testinhg User for app",
                 "tags":["PUBLIC ROUTE"],
                 "responses":{
                     "200":{
-                        "description":"Health Check"
+                        "description":"Health Check Pass"
                     }
                 }
+
             }
         },
         "/location":{
             "summary":"Testing location route",
             "get":{
-                "description":"Testing Location Route",
-                "tags":["PUBLIC ROUTE"],
-                "responses":{
-                    "200":{
-                        "description":"Location Route"
-                    }
-                }
-            }
-        },
-        "/details/{id}":{
-            "summary":"Getting Particular User Info",
-            "get":{
-                "description":"Getting Restaurants details",
+                "description":"Testinhg location route for app",
                 "tags":["PUBLIC ROUTE"],
                 "parameters":[
                     {
-                        "in":"path",
-                        "name":"id",
-                        "schema":{
-                            "type":"string"
-                        },
-                        "required":true,
-                        "description":"Id of the user"
+                        "name":"x-access-auth",
+                        "in":"header",
+                        "required":true
                     }
                 ],
                 "responses":{
                     "200":{
-                        "description":"Getting rest details"
+                        "description":"location route"
                     }
                 }
+
+            }
+        },
+        "/details":{
+            "summary":"Testing location route",
+            "get":{
+                "description":"Testinhg location route for app",
+                "tags":["PUBLIC ROUTE"],
+                "parameters":[
+                    {
+                        "name":"id",
+                        "in":"path",
+                        "required":true
+                    },
+                    {
+                        "name":"mealid",
+                        "in":"query"
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"location route"
+                    }
+                }
+
             }
         },
         "/placeOrder":{
-            "summary":"Getting Particular User Info",
+            "summary":"Testing location route",
             "post":{
-                "description":"Getting Restaurants details",
+                "description":"Testinhg location route for app",
                 "tags":["PUBLIC ROUTE"],
                 "requestBody":{
                     "required":true,
@@ -87,15 +97,16 @@
                 },
                 "responses":{
                     "200":{
-                        "description":"Getting rest details"
+                        "description":"location route"
                     }
                 }
+
             }
         },
         "/updateOrder":{
-            "summary":"Getting Particular User Info",
+            "summary":"Testing location route",
             "put":{
-                "description":"Getting Restaurants details",
+                "description":"Testinhg location route for app",
                 "tags":["PUBLIC ROUTE"],
                 "requestBody":{
                     "required":true,
@@ -106,23 +117,24 @@
                                 "id":"string"
                             },
                             "example":{
-                                "_id":"66aef42cb5f85eb0370fe7ab",
-                                "status":"Delivered"
+                                "_id":"3534f4645y45y54",
+                                "status": "Pending"
                             }
                         }
                     }
                 },
                 "responses":{
                     "200":{
-                        "description":"Getting rest details"
+                        "description":"location route"
                     }
                 }
+
             }
         },
         "/deleteOrder":{
-            "summary":"Getting Particular User Info",
+            "summary":"Testing location route",
             "delete":{
-                "description":"Getting Restaurants details",
+                "description":"Testinhg location route for app",
                 "tags":["PUBLIC ROUTE"],
                 "requestBody":{
                     "required":true,
@@ -133,19 +145,19 @@
                                 "id":"string"
                             },
                             "example":{
-                                "_id":"66aef42cb5f85eb0370fe7ab",
-                                "status":"Delivered"
+                                "_id":"3534f4645y45y54",
+                                "status": "Pending"
                             }
                         }
                     }
                 },
                 "responses":{
                     "200":{
-                        "description":"Getting rest details"
+                        "description":"location route"
                     }
                 }
+
             }
         }
     }
-
 }
